@@ -1,0 +1,26 @@
+Les pages qui restent à faire en gros :
+---------------------------------------
+Article :
+	T-shirt 
+	Sweat
+	Chausette
+	....
+Petit payement 
+Grand payemnt
+Autre 
+
+Conseil pour les ajout 
+----------------------
+Ajout catégorie :
+	Changer Slick21 et wrap-slick21 par un autre chiffre
+
+	Changer dans le fichie js slick-custom le copier et le 
+	renomer par le chiffre changer dans l'home 
+
+	PS : Viens me voir au cas où 
+Dans les lien change le nom et le href 
+
+Autres
+-----------------------------
+Tu devras peut-être mettre un nouvel template avec le prof car je penses 
+qu'on recevra la réponse jeudi de la rentrée
