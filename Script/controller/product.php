@@ -2,31 +2,25 @@
 /**
  * @file    product.php
  * @brief   File description
- * @author  Create by Nathan.CHAUVEAU
- * @version 03.03.2022
+ * @author  Create by Nathan.CHAUVEAU modified by Adam, Elodie, Pierrot
+ * @version 06.05.2022
  */
-function ControlArticle($ArrayofProductInput){
+
+function addArticle($title,$category,$description,$image,$price){
     require "model/articleManager.php";
-    if(isset($ArrayofProductInput)){
-        if($ArrayofProductInput['prix'] >= "0"){
+    if(isset($title,$category,$description,$image,$price)){
+        if($price >= "0"){
+            $message= array($title,$description,$image,$price);
 
-            $titre= $ArrayofProductInput['titre'];
-            $categorie= $ArrayofProductInput['categorie'];
-            $description = $ArrayofProductInput['description'];
-            $image=$ArrayofProductInput['image'];
-            $prix=$ArrayofProductInput['prix'];
-
-            $message= array($titre,$description,$prix,$image);
-
-            $JSONContent=getContentArticleJSON($categorie);
+            $jsonContent=getContentArticleJSON($category);
 
             //check if the article is already inside the JSON
-            if((strpos($JSONContent,$titre) !== false) &&(strpos($JSONContent,$image) !== false)&&(strpos($JSONContent,$prix) !== false)&&(strpos($JSONContent,$description) !== false)){
+            if((strpos($jsonContent,$title) !== false) &&(strpos($jsonContent,$image) !== false)&&(strpos($jsonContent,$price) !== false)&&(strpos($jsonContent,$description) !== false)){
                 //send back to the add article page
                 require "view/addArticle.php";
             }else{
                 //write the article in the good JSON
-                writearticleInJSON($message,$categorie);
+                writeArticleInJson($message,$category);
                 require 'view/home.php';
             }
 

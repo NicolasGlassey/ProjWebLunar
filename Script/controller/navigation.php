@@ -2,9 +2,10 @@
 /**
  * @file    navigation.php
  * @brief   Navigate from every pages
- * @author  Create by Nathan.CHAUVEAU
- * @version 02.02.2022
+ * @author  Create by Nathan.CHAUVEAU modified by Adam, Elodie, Pierrot
+ * @version 06.05.2022
  */
+
 //all of this function send the user to the appropriate page
 /**
  * @return void
@@ -23,13 +24,13 @@ function lost(){
 /**
  * @return void
  */
-function login(){
+function viewLogin(){
     require "view/login.php";
 }
 
-function newaccount(){
+function viewRegister(){
     require "view/create.php";
 }
-function Addarticle(){
+function addArticle(){
     require "view/addArticle.php";
 }

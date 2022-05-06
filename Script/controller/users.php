@@ -2,28 +2,29 @@
 /**
  * @file    users.php
  * @brief   Write the message in a variable
- * @author  Create by Nathan.CHAUVEAU
- * @version 02.02.2022
+ * @author  Create by Nathan.CHAUVEAU modified by Adam, Elodie, Pierrot
+ * @version 06.05.2022
  */
 
 
-function SessionUnlogin(){
+function sessionUnlogin(){
     require 'view/home.php';
     session_destroy();
 }
 
 /**
- * @param $arrayOfUsersInput
+ * @param $email,$pseudo,$pwd
  * @return void
  */
-function SessionLogin($arrayOfUsersInput){
+function register($email,$pseudo,$pwd){
     require "model/userManager.php";
     //prepare the message which will be write in the json file
-    if(isset($arrayOfUsersInput)){
-        $Name=""; // create the message
+    if(isset($email,$pseudo,$pwd)){
+        $name=""; // create the message
         $count=0;
         $message="";
         //Prepare the welcome message
+        /**
         foreach ($arrayOfUsersInput as $userInput){
             if($count <=0){
                 $count=$count+1;
@@ -32,14 +33,13 @@ function SessionLogin($arrayOfUsersInput){
                 $Name=$Name;
             }
         }
-        $email = $arrayOfUsersInput['email'];
-        $pseudo = $arrayOfUsersInput['username'];
-        $mdp = $arrayOfUsersInput['mdp'];
-        $message= array($email,$pseudo,$mdp);
-        //encode the message into json
-        writeRegisterInJSON($message);
+        */
 
-        $_SESSION['wf']=$Name;
+        $message= array($email,$pseudo,$pwd);
+        //encode the message into json
+        writeRegisterInJson($message);
+
+        $_SESSION['wf']=$name;
 
         require 'view/home.php';
     }else{
@@ -48,20 +48,16 @@ function SessionLogin($arrayOfUsersInput){
 }
 
 /**
- * @param $arrayOfUsersInput
+ * @param $email,$pseudo,$pwd
  * @return void
  */
-function check($arrayOfUsersInput){
+function check($email,$pseudo,$pwd){
     require "model/userManager.php";
-    //take the pseudo and mdp input
-    $pseudo = $arrayOfUsersInput['username'];
-    $email = $arrayOfUsersInput['email'];
-    $mdp = $arrayOfUsersInput['mdp'];
     //decode the file to a string
-    $JSONContent=getContentJSON();
+    $jsonContent=getContentJson();
 
     //check if the pseudo and the password are inside of the JSON file
-    if((strpos($JSONContent,$email) !== false) &&(strpos($JSONContent,$mdp) !== false)){
+    if((strpos($jsonContent,$email) !== false) &&(strpos($jsonContent,$pwd) !== false)){
     //Connection to the user account
         $_SESSION['wf']=$pseudo;
         require 'view/home.php';
