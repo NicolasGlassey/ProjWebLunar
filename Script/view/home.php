@@ -1,16 +1,15 @@
 <?php
 /**
- * @file      home.php
+ * @file      login.php
  * @brief     This view is designed to display the home page
- * @author    Created by Pascal.BENZONANA
- * @author    Updated by Nicolas.GLASSEY
- * @version   13-APR-2020
+ * @author    Created by Elodie Depierraz and Adam, Nathan, Pierrot
+ * @version   12.05.2022
  */
 
 ob_start();
 $title = "Home";
 ?>
-    <!-- La bannière -->
+    <!-- The banner -->
     <section class="slide1">
         <div class="wrap-slick1">
             <div class="slick1">
@@ -40,13 +39,13 @@ $title = "Home";
 						</span>
 
                         <h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37" data-appear="lightSpeedIn">
-                            New arrivals
+                            Nouveau produit
                         </h2>
 
                         <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="slideInUp">
                             <!-- Button -->
                             <a href="../index.php?action=displayArticles" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-                                Shop Now
+                                Achète maintenant !
                             </a>
                         </div>
                     </div>
@@ -74,6 +73,21 @@ $title = "Home";
             </div>
         </div>
     </section>
+
+
+
+
+
+
+
+
+<!--Review camelCase for view stoped here-->
+
+
+
+
+
+
     <!-- Sweat regarder la pour comprendre la formation du menu défilant-->
     <section class="newproduct bgwhite p-t-45 p-b-105">
         <div class="container">
