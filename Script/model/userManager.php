@@ -2,25 +2,22 @@
 /**
  * @file    userManager.php
  * @brief   prepare and write the message in the JSON file
- * @author  Create by Nathan.CHAUVEAU
- * @version 02.02.2022
+ * @author  Create by Nathan.CHAUVEAU modified by Adam, Elodie, Pierrot
+ * @version 12.05.2022
  */
 
-
-//code repris du register Correction
-
-//encode the message to JSON
+//encode the message to Json
 /**
  * @param $registerToWrite
  * @return void
  */
-function writeRegisterInJSON($registerToWrite)
+function writeRegisterInJson($registerToWrite)
 {
-    $pathToJSONFile = setFullPath("/data/login.json");
+    $pathToJsonFile = setFullPath("/data/login.json");
     $encodedRegister = json_encode($registerToWrite);
-    writeMsgInFile($pathToJSONFile, $encodedRegister, false);
+    writeMsgInFile($pathToJsonFile, $encodedRegister, false);
 }
-//prepare the path to the JSON file
+//prepare the path to the Json file
 /**
  * @param $fName
  * @return string
@@ -31,7 +28,7 @@ function setFullPath($fName)
     $fullPathToFile = $currentPath . "\\" . $fName;
     return $fullPathToFile;
 }
-//Write the message to the JSON file
+//Write the message to the Json file
 /**
  * @param $fileFullPath
  * @param $lineToWrite
@@ -50,13 +47,12 @@ function writeMsgInFile($fileFullPath, $lineToWrite, $erase)
     }
     fwrite($strWriter, $lineToWrite  . "\r\n");
     fclose($strWriter);
-    //!!!ne faite pas attention au rouge dans le fichier json , ceci n'impacte rien sur le code!!!
 }
 
 /**
  * @return mixed
  */
-function getContentJSON(){
+function getContentJson(){
     $json = file_get_contents('./data/login.json');
 
     return $json;
