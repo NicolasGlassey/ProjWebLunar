@@ -3,7 +3,7 @@
  * @file    users.php
  * @brief   Write the message in a variable
  * @author  Create by Nathan.CHAUVEAU modified by Adam, Elodie, Pierrot
- * @version 06.05.2022
+ * @version 13.05.2022
  */
 
 
@@ -16,30 +16,15 @@ function sessionUnlogin(){
  * @param $email,$pseudo,$pwd
  * @return void
  */
-function register($email,$pseudo,$pwd){
+function register($email,$pseudo,$password){
     require "model/userManager.php";
     //prepare the message which will be write in the json file
-    if(isset($email,$pseudo,$pwd)){
-        $name=""; // create the message
+    if(isset($email,$pseudo,$password)){
         $count=0;
         $message="";
-        //Prepare the welcome message
-        /**
-        foreach ($arrayOfUsersInput as $userInput){
-            if($count <=0){
-                $count=$count+1;
-                $Name=$Name .$userInput. " ";
-            }else{
-                $Name=$Name;
-            }
-        }
-        */
-
-        $message= array($email,$pseudo,$pwd);
+        $message= array($email,$pseudo,$password);
         //encode the message into json
         writeRegisterInJson($message);
-
-        $_SESSION['wf']=$name;
 
         require 'view/home.php';
     }else{
@@ -48,18 +33,17 @@ function register($email,$pseudo,$pwd){
 }
 
 /**
- * @param $email,$pseudo,$pwd
+ * @param $email,$pseudo,$password
  * @return void
  */
-function check($email,$pseudo,$pwd){
+function check($email,$pseudo,$password){
     require "model/userManager.php";
     //decode the file to a string
     $jsonContent=getContentJson();
 
     //check if the pseudo and the password are inside of the JSON file
-    if((strpos($jsonContent,$email) !== false) &&(strpos($jsonContent,$pwd) !== false)){
+    if((strpos($jsonContent,$email) !== false) &&(strpos($jsonContent,$password) !== false)){
     //Connection to the user account
-        $_SESSION['wf']=$pseudo;
         require 'view/home.php';
     }else{
         //send back to the login page

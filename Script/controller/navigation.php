@@ -31,6 +31,7 @@ function viewLogin(){
 function viewRegister(){
     require "view/create.php";
 }
-function addArticle(){
+
+function viewAddArticle(){
     require "view/addArticle.php";
 }
