@@ -1,9 +1,9 @@
 <?php
 /**
- * @file      login.php
- * @brief     This view is designed to display the home page
+ * @file      gabarit.php
+ * @brief     This view is designed to display the gabarit page
  * @author    Created by Elodie Depierraz and Adam, Nathan, Pierrot
- * @version   12.05.2022
+ * @version   13.05.2022
  */
 ?>
 <!--template link: https://nicepage.com/website-templates/preView/shop-special-offers-and-deals-52915?device=desktop-->

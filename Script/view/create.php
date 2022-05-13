@@ -1,9 +1,9 @@
 <?php
 /**
- * @file      login.php
- * @brief     This view is designed to display the home page
+ * @file      create.php
+ * @brief     This view is designed to display the create page
  * @author    Created by Elodie Depierraz and Adam, Nathan, Pierrot
- * @version   12.05.2022
+ * @version   13.05.2022
  */
 ?>
 <!--Link to original template: https://colorlib.com/wp/template/login-form-19/-->
@@ -35,7 +35,7 @@ ob_start();
                             <div class="form-group">
                                 <div class="icon d-flex align-items-center justify-content-center"><span
                                             class="fa fa-user"></span></div>
-                                <input type="text" name="userName" class="form-control" placeholder="Nom d'utilisateur"
+                                <input type="text" name="pseudo" class="form-control" placeholder="Nom d'utilisateur"
                                        required="">
                             </div>
 

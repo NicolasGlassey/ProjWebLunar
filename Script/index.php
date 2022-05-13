@@ -1,7 +1,6 @@
-
 <?php
 /**
- * @file    users.php
+ * @file    index.php
  * @brief   Sent the user where he should be when clicking a button/link
  * @author  Create by Nathan.CHAUVEAU modified by Adam, Elodie, Pierrot
  * @version 13.05.2022
