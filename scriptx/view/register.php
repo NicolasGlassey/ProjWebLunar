@@ -1,6 +1,6 @@
 <?php
 /**
- * @file      create.php
+ * @file      register.php
  * @brief     This view is designed to display the create page
  * @author    Created by Elodie Depierraz and Adam, Nathan, Pierrot
  * @version   13.05.2022
@@ -30,7 +30,7 @@ ob_start();
                         <!--Subtitle-->
                         <p class="text-center">Connecter vous</p>
                         <!--inscription formulaire-->
-                        <form action="index.php?action=session" method="post" name="action" class="login-form">
+                        <form action="index.php?action=register" method="post" name="action" class="login-form">
                             <!--Place for userInfo-->
                             <div class="form-group">
                                 <div class="icon d-flex align-items-center justify-content-center"><span

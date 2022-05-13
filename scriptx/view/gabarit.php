@@ -18,10 +18,10 @@
         echo $title;
         if (isset ($_SESSION['user'])) {
             $connect = "Se déconnecter";
-            $connectLink = "index.php?action=unlogin";
+            $connectLink = "index.php?action=unLogin";
         } else {
             $connect = "Se connecter";
-            $connectLink = "index.php?action=login";
+            $connectLink = "index.php?action=viewLogin";
         }
 
         ?></title>
@@ -86,11 +86,11 @@
                 <ul class="u-nav u-unstyled u-nav-1">
                     <li class="u-nav-item"><a
                                 class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                                href="index.php?action=create" style="padding: 10px 20px;"> S'inscrire</a></li>
+                                href="index.php?action=viewRegister" style="padding: 10px 20px;"> S'inscrire</a></li>
 
                     <li class="u-nav-item"><a
                                 class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                                href="index.php?action=addarticle" style="padding: 10px 20px;"> Ajouter un produit</a>
+                                href="index.php?action=addArticle" style="padding: 10px 20px;"> Ajouter un produit</a>
                     </li>
 
                     <li class="u-nav-item"><a

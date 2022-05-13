@@ -29,7 +29,7 @@ function viewLogin(){
 }
 
 function viewRegister(){
-    require "view/create.php";
+    require "view/register.php";
 }
 
 function viewAddArticle(){

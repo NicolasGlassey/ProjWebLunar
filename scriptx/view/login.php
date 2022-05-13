@@ -53,7 +53,7 @@ $title = "Home";
                             <!--link for inscription-->
                             <div class="w-100 text-center mt-4 text">
                                 <p class="mb-0">Vous n'avez pas de compte inscrivez vous</p>
-                                <a href="index.php?action=create"">S'inscrire</a>
+                                <a href="index.php?action=viewRegister">S'inscrire</a>
                             </div>
                         </div>
                     </div>

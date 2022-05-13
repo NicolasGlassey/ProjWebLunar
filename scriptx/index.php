@@ -15,7 +15,7 @@ session_start();
 if (isset($_GET['action'])){
     $action=$_GET['action'];
     switch ($action) {
-        case 'addarticle':
+        case 'viewA ddArticle':
             viewAddArticle();
             break;
 
