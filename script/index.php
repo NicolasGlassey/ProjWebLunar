@@ -3,74 +3,50 @@
  * @file    index.php
  * @brief   Sent the user where he should be when clicking a button/link
  * @author  Create by Nathan.CHAUVEAU modified by Adam, Elodie, Pierrot
+ //TODO either your mention all dev with firstname + surname, or only firstname (email address instead?
  * @version 13.05.2022
  */
 
 require 'controller/users.php';
 require "controller/navigation.php";
 require "controller/product.php";
-//start a new session
+
 session_start();
-//depending where the user was , it will guide him in a new page
+
 if (isset($_GET['action'])){
     $action=$_GET['action'];
     switch ($action) {
-        case 'viewA ddArticle':
-            viewAddArticle();
-            break;
-
+        //TODO NGY - viewAddArticle and addArticle make a confusion.
         case 'addArticle':
-            $title= $_POST['titre'];
-            $category= $_POST['categorie'];
-            $description = $_POST['description'];
-            $image=$_POST['image'];
-            $price=$_POST['price'];
-            addArticle($title,$category,$description,$image,$price);
+            addArticle($_POST);
             break;
 
+        //TODO NGY - check is not clear enough
         case 'check':
-            $password= $_POST['password'];
-            $email= $_POST['email'];
-            $pseudo = $_POST['pseudo'];
-            check($password, $pseudo, $email);
+            check($_POST['password'], $_POST['email'], $_POST['pseudo']);
             break;
 
-        case 'viewRegister':
-            viewRegister();
-            break;
-
-        //stop the session and sent back the user to home
+        //TODO NGY - unlogin is not clear enough
         case 'unlogin':
             sessionUnlogin();
             break;
 
-        //collect the data from the formulaire, write the datas in the json file and sent back the user in the home page with a new message
         case 'register':
-            $email = $_POST['email'];
-            $pseudo = $_POST['pseudo'];
-            $password = $_POST['password'];
-            register($email,$pseudo,$password);
+            register($_POST);
             break;
 
         //sent the user to the login page
-        case 'viewLogin':
-            viewLogin();
-            break;
-
-        //sent the user to the home page
-        case 'home':
-            home();
-            //send to home
+        case 'login':
+            login($_POST);
             break;
 
         //sent the user to the lost page
         default:
-            lost();
+            home(true);
     }
 }
 else{
     //sent the user to the home page
     home();
-
 }
 
