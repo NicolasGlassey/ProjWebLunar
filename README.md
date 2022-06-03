@@ -1,34 +1,75 @@
-# LUNAR
+# Configuration IDE
 
-Foobar is a Python library for dealing with word pluralization.
+## Marche à suivre
 
-## Installation
+Voici la marche à suivre d’installation et de mise a jours des programmes que nous allons utiliser dans le cadre du projet web.
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Dans ce projet nous utiliserons toujours les dernières mises à jours des applications installées.
 
-```bash
-pip install foobar
-```
+## PhpStorm
 
-## Usage
+**Mise à jour :**
 
-```python
-import foobar
+*Si vous n’avez pas PhpStorm merci de le télécharger [ici](https://www.jetbrains.com/phpstorm/download/#section=windows).*
 
-# returns 'words'
-foobar.pluralize('word')
+Ouvrir PhpStorm, se diriger sur l’onglet « File/Settings », chercher dans la barre de recherche « Updates » puis cliquer sur « Check for Updates ».
 
-# returns 'geese'
-foobar.pluralize('goose')
+**Installation de l’interpréteur et de la version PHP :**
 
-# returns 'phenomenon'
-foobar.singularize('phenomena')
-```
+Je rappelle que dans chaque projet il est nécessaire d’avoir son interpréteur PHP activé.
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Rendez-vous a nouveau dans « File/Settings » mais cette fois si dirigé vous sur l’onglet PHP. Définissez votre PHP langage level a 8.0 et activez votre CLI interpréter. 
 
-Please make sure to update tests as appropriate.
+S’il vous manque l’interpréteur téléchargez le [ici](https://www.php.net/downloads) et installez le a l’aide de la [documentation](https://moodle.cpnv.ch/moodle/pluginfile.php/78925/mod_resource/content/7/SetupPhpStorm%20V1.1.pdf) prévue à cet effet.
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+**Mise en place du Xdebug :**
+
+Pour avoir simplement le xdebug dirigez-vous dans « Run/ Run » puis sélectionnez « formulaire.php »
+
+## Git
+
+**Installation :**
+
+Si git n’est pas installer sur votre machine vous pouvez le télécharger [ici](https://git-scm.com/downloads), sélectionner votre system d’exploitation et prenez la dernière version 64 bit.
+
+Contentez-vous simplement de cliquer sur suivant tout le long de l’installation.
+
+Lors de vos premières commandes, git vous demandera une identification, contentez-vous d’exécuter à la lettre ce qu’il vous demande et identifié vous avec votre navigateur.
+
+**Mise a jours :**
+
+* Sur Windows: *git update-git-for-windows*
+
+* Sur Linux: *sudo apt-get update* puis *sudo apt-get install git*
+
+* Sur Mac: *brew update* puis *brew upgrade git*
+
+
+
+## Doxygen	
+
+**Installation :**
+
+Rendez-vous sur [ce](https://www.doxygen.nl/download.html) lien, scrollez vers le bas jusqu’à trouver la rubrique « Source and Binaries ». Téléchargez l’installateur correspondant à l’OS de votre choix. 
+
+Contentez-vous simplement de cliquer sur suivant tout le long de l’installation.
+
+## Slack
+
+**Installation :**
+
+Contentez-vous simplement de télécharger l’application disponible [ici](https://slack.com/intl/fr-ch/). Si vous avez un linux ou un mac, ajouter juste un « /linux ou un /mac a l’url.
+
+Vous allez néanmoins devoir créer un compte.
+
+## Client SSH	
+
+**Installation Windows :**
+
+Tout d’abord, pressez la touche Windows + R, dans la fenêtre copier- coller cette commande : ms-settings:optionalfeatures. Une fenêtre s’ouvre ensuite, il va falloir y chercher SSH et l’installer.
+
+Pour lancer le service, il va falloire aller dans l’application service et y chercher OpenSSH SSH Server, puis mettre le service en démarrage manuel (Où automatique).
+
+
+
+Adam Sifate 03.06.22  basé sur le document Doc_Configuration_IDE
