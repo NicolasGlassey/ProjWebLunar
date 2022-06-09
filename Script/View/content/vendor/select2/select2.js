@@ -5555,7 +5555,7 @@ S2.define('select2/core',[
     if (this.options.get('debug') &&
         arguments.length > 0 && window.console && console.warn) {
       console.warn(
-        'Select2: Data can no longer be set using `select2("data")`. You ' +
+        'Select2: data can no longer be set using `select2("data")`. You ' +
         'should consider setting the value instead using `$element.val()`.'
       );
     }

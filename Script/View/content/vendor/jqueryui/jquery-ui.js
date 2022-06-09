@@ -15982,7 +15982,7 @@ var widgetsSortable = $.widget( "ui.sortable", $.ui.mouse, {
 			for ( j = 0, queriesLength = _queries.length; j < queriesLength; j++ ) {
 				item = $( _queries[ j ] );
 
-				// Data for target checking (mouse manager)
+				// data for target checking (mouse manager)
 				item.data( this.widgetName + "-item", targetData );
 
 				items.push( {

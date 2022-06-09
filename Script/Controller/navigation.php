@@ -2,34 +2,36 @@
 /**
  * @file    navigation.php
  * @brief   Navigate from every pages
- * @author  Create by Nathan.CHAUVEAU
- * @version 02.02.2022
+ * @author  Create by Nathan.CHAUVEAU modified by Adam, Elodie, Pierrot
+ * @version 06.05.2022
  */
+
 //all of this function send the user to the appropriate page
 /**
  * @return void
  */
 function home(){
-    require "View/home.php";
+    require "view/home.php";
 }
 
 /**
  * @return void
  */
 function lost(){
-    require "View/lost.php";
+    require "view/lost.php";
 }
 
 /**
  * @return void
  */
-function login(){
-    require "View/login.php";
+function viewLogin(){
+    require "view/login.php";
 }
 
-function newaccount(){
-    require "View/create.php";
+function viewRegister(){
+    require "view/register.php";
 }
-function Addarticle(){
-    require "View/AddArticle.php";
+
+function viewAddArticle(){
+    require "view/addArticle.php";
 }
