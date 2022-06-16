@@ -13,6 +13,7 @@
  */
 function writeRegisterInDatabase($email,$name,$password)
 {
+    //write in the DB the new account
     require_once "model/dbConnector.php";
     $strSeparator = '\'';
     $loginQuery = 'INSERT INTO members (name,email,pasword,types_idTypes) VALUES ("'.$name.'","'.$email.'","'.$password.'","'."1".'")';
@@ -24,6 +25,7 @@ function writeRegisterInDatabase($email,$name,$password)
 
 function checkIfEmailExist($email)
 {
+    //check if the email entered is already taken
     require_once "model/dbConnector.php";
 
     $result = false;
@@ -37,6 +39,27 @@ function checkIfEmailExist($email)
 
     return $result;
 }
+
+function checkAccount($name,$email,$password)
+{
+    //check if the account already existed or not
+    require_once "model/dbConnector.php";
+
+    $result = false;
+    $strSeparator = '\'';
+    $loginQuery = 'SELECT * FROM members WHERE email ='.$strSeparator.$email.$strSeparator.'AND name='.$strSeparator.$name.$strSeparator.'AND pasword='.$password;
+    //TODO corriger pasword en password :P
+    $queryResult = executeQuerySelect($loginQuery);
+
+    if (count($queryResult) == 1) {
+        $result = true;
+    }
+
+    return $result;
+}
+
+//TODO Delete all JSON files/function (at the end once every is done!!!), also change the title of this file
+
 
 //prepare the path to the Json file
 /**

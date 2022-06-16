@@ -52,9 +52,11 @@ function login($arrayOfUser){
         $password = $arrayOfUser['password'];
         $jsonContent=getContentJson();
         //check if the pseudo and the password are inside of the JSON file
-        if((strpos($jsonContent,$email) == true) &&(strpos($jsonContent,$password) == true)&&(strpos($jsonContent,$pseudo) == true)){
+        if(checkAccount($pseudo,$email,$password)){
             //Connection to the user account
             $_SESSION['user']=$pseudo;
+            $_SESSION['email']=$email;
+
             require 'view/home.php';
         }
         else{

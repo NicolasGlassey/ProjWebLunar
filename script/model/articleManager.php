@@ -24,7 +24,7 @@ function checkIfProductExist($title,$description)
 
     $result = false;
     $strSeparator = '\'';
-    $loginQuery = 'SELECT * FROM article WHERE title ='.$strSeparator.$title.$strSeparator.'AND description='.$strSeparator.$description.$strSeparator;
+    $loginQuery = 'SELECT * FROM articles WHERE title ='.$strSeparator.$title.$strSeparator.'AND description='.$strSeparator.$description.$strSeparator;
     $queryResult = executeQuerySelect($loginQuery);
     //TODO check if work
     if (count($queryResult) == 1) {
@@ -39,13 +39,11 @@ function getCategoryId($category)
     require_once "model/dbConnector.php";
 
     $strSeparator = '\'';
-    $loginQuery = 'SELECT id FROM category WHERE name ='.$strSeparator.$category.$strSeparator;
+    $loginQuery = 'SELECT idCategories FROM categories WHERE name ='.$strSeparator.$category.$strSeparator;
     $queryResult = executeQuerySelect($loginQuery);
-    //TODO check if work
     if (count($queryResult) == 1) {
-        $result = $queryResult;
+        $result = $queryResult[0]["idCategories"];
     }else{
-        //TODO erreur en cas d'échec
         $result = "erreur";
     }
 

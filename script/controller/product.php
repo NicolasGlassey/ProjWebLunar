@@ -23,10 +23,10 @@ function addArticle($arrayofArticle){
                 require "view/addArticle.php";
             }else{
                 //write the article in the DB
-                //TODO controler function getCategoryId
-
                 $idcategory=getCategoryId($category);
                 if($idcategory != "erreur"){
+                    //TODO faire fonction get id client
+                    getClientId();
                     writeArticleInDB($title,$description,$image,$price,$_SESSION['user'],$idcategory);
                     require 'view/home.php';
                 }else{

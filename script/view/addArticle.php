@@ -23,9 +23,9 @@
         <label for="category">Catégorie</label>
         <select name="category" id="category" required>
             <option value="">---Veuillez choisir une catégorie---</option>
-            <option value="teeShirt">Tee-shirt</option>
-            <option value="sweat">Sweat</option>
-            <option value="sock">Chausette</option>
+            <option value="Tee-shirt">Tee-shirt</option>
+            <option value="Sweat">Sweat</option>
+            <option value="Chausette">Chausette</option>
         </select>
     </div>
     <div>
