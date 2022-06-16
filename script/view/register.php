@@ -31,7 +31,7 @@ ob_start();
                     <div class="login-wrap py-5">
                         <!--url(Path to logo image)-->
                         <div class="img d-flex align-items-center justify-content-center"
-                             style="background-image:url(content/images/logo.jpg)">
+                             style="background-image:url(view/content/images/logo.jpg)">
                         </div>
                         <!--Title "bienvenue sur lunarclothe"-->
                         <h3 class="text-center mb-0">Bienvenue sur LunarClothes</h3>

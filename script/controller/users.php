@@ -21,20 +21,18 @@ function sessionUnlogin(){
  */
 function register($arrayOfUser){
     require "model/userManager.php";
-    //prepare the message which will be write in the json file
+    //prepare to send a request to write the user in the DB
     if($arrayOfUser ==! null){
         $email = $arrayOfUser['email'];
         $pseudo = $arrayOfUser['pseudo'];
         $password = $arrayOfUser['password'];
-        $jsonContent=getContentJson();
-        if((strpos($jsonContent,$email) == false) &&(strpos($jsonContent,$password) == false)) {
+        //check if the email is already in the DB, if not, it will write in the DB
+        if(checkIfEmailExist($email)) {
             require "view/register.php";
         }
         else{
-            $message = array($email, $pseudo, $password);
-            writeRegisterInjson($message);
+            writeRegisterInDatabase($email,$pseudo,$password);
         }
-        //encode the message into json
         $_SESSION['user']=$pseudo;
         require 'view/home.php';
     }else{

@@ -15,6 +15,7 @@
 <head>
     <title>
         <?php
+        //TODO ajouter le "Ajouter un produit" dans le if $_SESSION['user']
         echo $title;
         if(isset ($_SESSION['user']) ){
             $connect="Se déconnecter";

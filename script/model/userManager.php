@@ -11,12 +11,35 @@
  * @param $registerToWrite
  * @return void
  */
-function writeRegisterInJson($registerToWrite)
+function writeRegisterInDatabase($email,$name,$password)
 {
-    $pathToJsonFile = setFullPath("/data/login.json");
-    $encodedRegister = json_encode($registerToWrite);
-    writeMsgInFile($pathToJsonFile, $encodedRegister, false);
+    require_once "model/dbConnector.php";
+
+
+    $strSeparator = '\'';
+    $loginQuery = 'INSERT INTO members (name,email,pasword,types_idTypes) VALUES ("'.$name.'","'.$email.'","'.$password.'","'."1".'")';
+    //TODO corriger pasword en password :P
+    $queryResult = executeQuerySelect($loginQuery);
+
+    return $queryResult;
 }
+
+function checkIfEmailExist($email)
+{
+    require_once "model/dbConnector.php";
+
+    $result = false;
+    $strSeparator = '\'';
+    $loginQuery = 'SELECT * FROM members WHERE email ='.$strSeparator.$email.$strSeparator;
+    $queryResult = executeQuerySelect($loginQuery);
+
+    if (count($queryResult) == 1) {
+        $result = true;
+    }
+
+    return $result;
+}
+
 //prepare the path to the Json file
 /**
  * @param $fName
