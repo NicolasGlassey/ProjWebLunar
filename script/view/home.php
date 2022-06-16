@@ -2,7 +2,7 @@
 /**
  * @file      home.php
  * @brief     This view is designed to display the home page
- * @author    Created by Elodie Depierraz and Adam, Nathan, Pierrot
+ * @author    Created by Elodie and Adam, Nathan, Pierrot
  * @version   13.05.2022
  */
 
@@ -32,26 +32,26 @@ $title = "Home";
                     </div>
                 </div>
 
-                <div class="item-slick1 item2-slick1" style="background-image: url(view/content/images/Vêtement/bannière/Image2.jpg);">
+                <div class="item-slick1 item2-slick1" style="background-image: url(View/content/images/Vêtement/bannière/Image2.jpg);">
                     <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
 						<span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15" data-appear="rollIn">
 							Collection Femmes 2020
 						</span>
 
                         <h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37" data-appear="lightSpeedIn">
-                            Nouveau produit
+                            New arrivals
                         </h2>
 
                         <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="slideInUp">
                             <!-- Button -->
                             <a href="../index.php?action=displayArticles" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-                                Achète maintenant !
+                                Shop Now
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="item-slick1 item3-slick1" style="background-image: url(view/content/images/Vêtement/bannière/Image3.jpg);">
+                <div class="item-slick1 item3-slick1" style="background-image: url(View/content/images/Vêtement/bannière/Image3.jpg);">
                     <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
 						<span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15" data-appear="rotateInDownLeft">
 							Collection Enfants 2020
@@ -73,8 +73,7 @@ $title = "Home";
             </div>
         </div>
     </section>
-
-    <!-- Sweat-->
+    <!-- Sweat regarder la pour comprendre la formation du menu défilant-->
     <section class="newproduct bgwhite p-t-45 p-b-105">
         <div class="container">
             <div class="sec-title p-b-60">
@@ -84,6 +83,7 @@ $title = "Home";
                 </h3>
             </div>
 
+            <!-- Slide2 Ajouter + 1 au slick -->
             <div class="wrap-slick21">
                 <div class="slick21">
                     <!--product 1-->
@@ -672,7 +672,7 @@ $title = "Home";
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-                                <img src="view/content/images/Vêtement/Chausette/Chausette%202.jpg" alt="IMG-PRODUCT">
+                                <img src="view/content/images/Vêtement/Chausette/Chausette%201.jpg" alt="IMG-PRODUCT">
 
                                 <div class="block2-overlay trans-0-4">
                                     <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -705,7 +705,7 @@ $title = "Home";
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-img wrap-pic-w of-hidden pos-relative">
-                                <img src="view/content/images/Vêtement/Chausette/Chausette%201.jpg" alt="IMG-PRODUCT">
+                                <img src="view/content/images/Vêtement/Chausette/chausette%202.jpg" alt="IMG-PRODUCT">
 
                                 <div class="block2-overlay trans-0-4">
                                     <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">

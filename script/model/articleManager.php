@@ -2,8 +2,8 @@
 /**
  * @file    articleManager.php
  * @brief   File description
- * @author  Create by Nathan.CHAUVEAU modified by Adam, Elodie, Pierrot
- * @version 12.05.2022
+ * @author  Create by Nathan modified by Adam, Elodie, Pierrot
+ * @version 10.06.2022
  */
 
 function writeArticleInJson($articleToWrite,$category){
@@ -13,7 +13,7 @@ function writeArticleInJson($articleToWrite,$category){
     $encodedRegister = json_encode($articleToWrite);
     writeMsgInFile($pathToJsonFile, $encodedRegister, false);
 }
-function getContentArticleJSON($categorie){
+function getContentArticleJson($categorie){
     $pathJson='./data/'.$categorie.'.json';
     $json = file_get_contents($pathJson);
     return $json;

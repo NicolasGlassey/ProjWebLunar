@@ -1,15 +1,23 @@
 <?php
 /**
- * @file      register.php
- * @brief     This view is designed to display the create page
- * @author    Created by Elodie Depierraz and Adam, Nathan, Pierrot
- * @version   13.05.2022
+ * @file    register.php
+ * @brief   The user enter the information for the registration
+ * @author  Create by Elodie modified by Adam, Nathan, Pierrot
+ * @version 10.06.2022
  */
 ?>
 <!--Link to original template: https://colorlib.com/wp/template/login-form-19/-->
 <!DOCTYPE html>
 <html style="font-size: 16px;">
-
+<style>
+    .inputLabel{
+        text-align: left;
+        color:white;
+    }
+    .form-group{
+        border : white 2px solid;
+    }
+</style>
 <body class="u-body">
 <?php
 $title = "register";
@@ -23,40 +31,34 @@ ob_start();
                     <div class="login-wrap py-5">
                         <!--url(Path to logo image)-->
                         <div class="img d-flex align-items-center justify-content-center"
-                             style="background-image:url(View/content/images/Logo.jpg)">
+                             style="background-image:url(content/images/logo.jpg)">
                         </div>
                         <!--Title "bienvenue sur lunarclothe"-->
                         <h3 class="text-center mb-0">Bienvenue sur LunarClothes</h3>
                         <!--Subtitle-->
-                        <p class="text-center">Connecter vous</p>
+                        <p class="text-center">Enregistrez-vous</p>
                         <!--inscription formulaire-->
                         <form action="index.php?action=register" method="post" name="action" class="login-form">
                             <!--Place for userInfo-->
+                            <span class="inputLabel">Nom d'utilisateur:</span>
                             <div class="form-group">
-                                <div class="icon d-flex align-items-center justify-content-center"><span
-                                            class="fa fa-user"></span></div>
-                                <input type="text" name="pseudo" class="form-control" placeholder="Nom d'utilisateur"
-                                       required="">
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
+                                <input  type="text" name="pseudo" class="form-control" required="">
                             </div>
-
+                            <span class="inputLabel">Email:</span>
                             <div class="form-group">
-                                <div class="icon d-flex align-items-center justify-content-center"><span
-                                            class="fa fa-user"></span></div>
-                                <input type="text" name="email" class="form-control" placeholder="Email" required="">
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
+                                <input  type="text" name="email" class="form-control"  required="">
                             </div>
-
+                            <span class="inputLabel">Mot de passe :</span>
                             <div class="form-group">
-                                <div class="icon d-flex align-items-center justify-content-center"><span
-                                            class="fa fa-lock"></span></div>
-                                <input type="password" name="password" class="form-control" placeholder="Mot de passe"
-                                       required="">
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
+                                <input type="password" name="password" class="form-control"  required="">
                             </div>
 
                             <!--Submit button-->
-                            <div class="form-group">
-                                <button type="submit" class="btn form-control btn-primary rounded submit px-3">Se
-                                    connecter
-                                </button>
+                            <div >
+                                <button type="submit" class="btn form-control btn-primary rounded submit px-3">Se connecter</button>
                             </div>
                         </form>
                     </div>

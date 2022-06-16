@@ -2,8 +2,8 @@
 /**
  * @file    userManager.php
  * @brief   prepare and write the message in the JSON file
- * @author  Create by Nathan.CHAUVEAU modified by Adam, Elodie, Pierrot
- * @version 12.05.2022
+ * @author  Create by Nathan
+ * @version 10.06.2022
  */
 
 //encode the message to Json
@@ -52,8 +52,8 @@ function writeMsgInFile($fileFullPath, $lineToWrite, $erase)
 /**
  * @return mixed
  */
-function getContentJson(){
+function getContentJson()
+{
     $json = file_get_contents('./data/login.json');
-
     return $json;
 }

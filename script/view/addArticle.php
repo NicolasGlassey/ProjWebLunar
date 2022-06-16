@@ -1,20 +1,20 @@
 <?php
 /**
  * @file    addArticle.php
- * @brief   Add article
- * @author  Create by Nathan.CHAUVEAU modified by Adam, Elodie, Pierrot
- * @version 12.05.2022
+ * @brief   The user enter the information for add a article
+ * @author  Create by Elodie modified by Adam, Nathan, Pierrot
+ * @version 09.06.2022
  */ ?>
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Ajout d'une article</title>
+    <title>Ajout d'un article</title>
 </head>
 
 <body>
-<form action="/index.php?action=controlarticle" method="post" name="action">
+<form action="index.php?action=addArticle" method="post" name="action">
     <div>
         <label for="title">Titre</label>
         <input name="title" type="text" id="title" placeholder="titre de l'article" required>
@@ -47,3 +47,8 @@
 </form>
 </body>
 </html>
+
+<?php
+$content = ob_get_clean();
+require "view/gabarit.php";
+?>

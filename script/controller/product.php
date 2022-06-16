@@ -1,21 +1,28 @@
 <?php
+
 /**
  * @file    product.php
- * @brief   File description
- * @author  Create by Nathan.CHAUVEAU modified by Adam, Elodie, Pierrot
- * @version 06.05.2022
+ * @brief   article informations management
+ * @author  Create by Nathan modified by Adam, Elodie, Pierrot
+ * @version 09.06.2022
  */
 
-function addArticle($title,$category,$description,$image,$price){
+function addArticle($arrayofArticle){
     require "model/articleManager.php";
-    if(isset($title,$category,$description,$image,$price)){
+    if($arrayofArticle ==! null){
+        $title = $arrayofArticle['title'];
+        $category = $arrayofArticle['category'];
+        $description = $arrayofArticle['description'];
+        $image = $arrayofArticle['image'];
+        $price  = $arrayofArticle['price'];
+
         if($price >= "0"){
             $message= array($title,$description,$image,$price);
 
-            $jsonContent=getContentArticleJSON($category);
+            $jsonContent=getContentArticleJson($category);
 
             //check if the article is already inside the JSON
-            if((strpos($jsonContent,$title) !== false) &&(strpos($jsonContent,$image) !== false)&&(strpos($jsonContent,$price) !== false)&&(strpos($jsonContent,$description) !== false)){
+            if((strpos($jsonContent,$title) == true) &&(strpos($jsonContent,$image) == true)&&(strpos($jsonContent,$price) == true)&&(strpos($jsonContent,$description) == true)){
                 //send back to the add article page
                 require "view/addArticle.php";
             }else{

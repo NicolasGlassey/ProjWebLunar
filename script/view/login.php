@@ -1,17 +1,29 @@
+<!--liens template :https://colorlib.com/wp/template/login-form-19/-->
+<!--Le site : Colorlib-->
 <?php
 /**
- * @file      login.php
- * @brief     This view is designed to display the login page
- * @author    Created by Elodie Depierraz and Adam, Nathan, Pierrot
- * @version   13.05.2022
- */
-
-ob_start();
-$title = "Home";
+* @file    login.php
+* @brief   The user enter the information for the connection
+* @author  Create by Elodie modified by Adam, Nathan, Pierrot
+* @version 10.06.2022
+*/
+ob_start()
 ?>
-<!--template link :https://colorlib.com/wp/template/login-form-19/-->
 <!DOCTYPE html>
 <html style="font-size: 16px;">
+
+<style>
+    .inputLabel{
+        text-align: left;
+        color:white;
+    }
+    .form-group{
+        border : white 2px solid;
+    }
+</style>
+ <head>
+
+  </head>
 
   <body class="u-body">
     <section class="u-align-center u-clearfix u-image u-valign-middle u-section-1" id="sec-5099">
@@ -21,39 +33,40 @@ $title = "Home";
                     <div class="col-md-6 col-lg-4">
                         <div class="login-wrap py-5">
                             <!--url(path of logo image)-->
-                            <div class="img d-flex align-items-center justify-content-center" style="background-image:url(View/content/images/Logo.jpg)">
+                            <div class="img d-flex align-items-center justify-content-center" style="background-image:url(view/content/images/logo.jpg)">
                             </div>
-                            <!--title "bienvenue sur lunarclothe"-->
+                            <!--titre bienvenue sur lunarclothe-->
                             <h3 class="text-center mb-0">Bienvenue sur LunarClothes</h3>
-                            <!--subtitle-->
-                            <p class="text-center">Connecter vous</p>
+                            <!--Sous-titre-->
+                            <p class="text-center">Connecter-vous</p>
                             <!--inscription formulaire-->
-                            <form action="index.php?action=check" method="post" name="action" class="login-form">
+                            <form action="index.php?action=login" method="post" name="action" class="login-form">
                                 <!--Place for userInfo-->
+                                <span class="inputLabel">Nom d'utilisateur:</span>
                                 <div class="form-group">
                                     <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
-                                    <input  type="text" name="pseudo" class="form-control" placeholder="Nom d'utilisateur" required="">
+                                    <input  type="text" name="pseudo" class="form-control" required="">
                                 </div>
-
+                                <span class="inputLabel">Email:</span>
                                 <div class="form-group">
                                     <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
-                                    <input  type="text" name="email" class="form-control" placeholder="Email" required="">
+                                    <input  type="text" name="email" class="form-control"  required="">
                                 </div>
-
+                                <span class="inputLabel">Mot de passe :</span>
                                 <div class="form-group">
                                     <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                                    <input type="password" name="password" class="form-control" placeholder="Mot de passe" required="">
+                                    <input type="password" name="password" class="form-control"  required="">
                                 </div>
 
                                 <!--Submit button-->
-                                <div class="form-group">
+                                <div >
                                     <button type="submit" class="btn form-control btn-primary rounded submit px-3">Se connecter</button>
                                 </div>
                             </form>
                             <!--link for inscription-->
                             <div class="w-100 text-center mt-4 text">
                                 <p class="mb-0">Vous n'avez pas de compte inscrivez vous</p>
-                                <a href="index.php?action=viewRegister">S'inscrire</a>
+                                <a href="index.php?action=register">S'inscrire</a>
                             </div>
                         </div>
                     </div>

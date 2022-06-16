@@ -1,9 +1,9 @@
 <?php
 /**
- * @file      gabarit.php
- * @brief     This view is designed to display the gabarit page
- * @author    Created by Elodie Depierraz and Adam, Nathan, Pierrot
- * @version   13.05.2022
+ * @file    gabarit.php
+ * @brief   The header and the footer on the web site
+ * @author  Create by Elodie modified by Adam, Nathan, Pierrot
+ * @version 10.06.2022
  */
 ?>
 <!--template link: https://nicepage.com/website-templates/preView/shop-special-offers-and-deals-52915?device=desktop-->
@@ -16,15 +16,16 @@
     <title>
         <?php
         echo $title;
-        if (isset ($_SESSION['user'])) {
-            $connect = "Se déconnecter";
-            $connectLink = "index.php?action=unLogin";
-        } else {
-            $connect = "Se connecter";
-            $connectLink = "index.php?action=viewLogin";
+        if(isset ($_SESSION['user']) ){
+            $connect="Se déconnecter";
+            $connectLink="index.php?action=logOut";
         }
+        else {
+            $connect="Se connecter";
+            $connectLink="index.php?action=login";}
 
-        ?></title>
+        ?>
+    </title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
@@ -78,7 +79,7 @@
     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <!---allow to positioned the logo-->
         <a href="index.php?action=home"" class="u-image u-logo u-image-1">
-        <img src="view/content/images/Logo.jpg" class="u-logo-image u-logo-image-1">
+        <img src="View/content/images/logo.jpg" class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
             <!--allow to make more link on the top-->
@@ -86,7 +87,7 @@
                 <ul class="u-nav u-unstyled u-nav-1">
                     <li class="u-nav-item"><a
                                 class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                                href="index.php?action=viewRegister" style="padding: 10px 20px;"> S'inscrire</a></li>
+                                href="index.php?action=register" style="padding: 10px 20px;"> S'inscrire</a></li>
 
                     <li class="u-nav-item"><a
                                 class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
@@ -184,7 +185,7 @@
                                             class="fa fa-solid fa-check"></i></i> Se connecter</a></li>
                             <br>
                             <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                      href="index.php?action=create"><i
+                                                      href="index.php?action=register"><i
                                             class="fa fa-solid fa-check"></i></i> S'inscrire</a></li>
                             <br>
                             <li class="u-nav-item"><a class="u-button-style u-nav-link" href="index.php?action=home"><i

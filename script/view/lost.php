@@ -1,9 +1,9 @@
 <?php
 /**
  * @file    lost.php
- * @brief   File description
- * @author  Create by Nathan.CHAUVEAU and Pierrot
- * @version 13.05.2022
+ * @brief   Lost File
+ * @author  Create by Nathan.CHAUVEAU
+ * @version 02.02.2022
 */
 ob_start();
 $title = "lost";
