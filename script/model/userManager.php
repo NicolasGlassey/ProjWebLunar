@@ -14,8 +14,6 @@
 function writeRegisterInDatabase($email,$name,$password)
 {
     require_once "model/dbConnector.php";
-
-
     $strSeparator = '\'';
     $loginQuery = 'INSERT INTO members (name,email,pasword,types_idTypes) VALUES ("'.$name.'","'.$email.'","'.$password.'","'."1".'")';
     //TODO corriger pasword en password :P

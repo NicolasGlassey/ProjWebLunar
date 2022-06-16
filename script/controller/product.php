@@ -17,24 +17,25 @@ function addArticle($arrayofArticle){
         $price  = $arrayofArticle['price'];
 
         if($price >= "0"){
-            $message= array($title,$description,$image,$price);
-
-            $jsonContent=getContentArticleJson($category);
-
-            //check if the article is already inside the JSON
-            if((strpos($jsonContent,$title) == true) &&(strpos($jsonContent,$image) == true)&&(strpos($jsonContent,$price) == true)&&(strpos($jsonContent,$description) == true)){
+            //check if the article is already inside the DB
+            if(checkIfProductExist($title,$description)){
                 //send back to the add article page
                 require "view/addArticle.php";
             }else{
-                //write the article in the good JSON
-                writeArticleInJson($message,$category);
-                require 'view/home.php';
-            }
+                //write the article in the DB
+                //TODO controler function getCategoryId
 
+                $idcategory=getCategoryId($category);
+                if($idcategory != "erreur"){
+                    writeArticleInDB($title,$description,$image,$price,$_SESSION['user'],$idcategory);
+                    require 'view/home.php';
+                }else{
+                    require "view/addArticle.php";
+                }
+            }
         }else{
             require "view/addArticle.php";
         }
-
     }else{
         require "view/addArticle.php";
     }
