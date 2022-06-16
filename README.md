@@ -1,75 +1,73 @@
 # Configuration IDE
 
-## Marche à suivre
+How to proceed
 
-Voici la marche à suivre d’installation et de mise a jours des programmes que nous allons utiliser dans le cadre du projet web.
+Here is the procedure for installing and updating the programs that we will use in the web project.
 
-Dans ce projet nous utiliserons toujours les dernières mises à jours des applications installées.
+In this project we will always use the latest updates of the installed applications.
 
 ## PhpStorm
 
-**Mise à jour :**
+**Update :**
 
-*Si vous n’avez pas PhpStorm merci de le télécharger [ici](https://www.jetbrains.com/phpstorm/download/#section=windows).*
+_If you do not have PhpStorm please download it [here](https://www.php.net/downloads.php).
 
-Ouvrir PhpStorm, se diriger sur l’onglet « File/Settings », chercher dans la barre de recherche « Updates » puis cliquer sur « Check for Updates ».
+Open PhpStorm, go to the &quot;File/Settings&quot; tab, search for &quot;Updates&quot; in the search bar and click on &quot;Check for Updates&quot;.
 
-**Installation de l’interpréteur et de la version PHP :**
+**Installation of the interpreter and the PHP version :**
 
-Je rappelle que dans chaque projet il est nécessaire d’avoir son interpréteur PHP activé.
+I remind that in each project it is necessary to have its PHP interpreter activated.
 
-Rendez-vous a nouveau dans « File/Settings » mais cette fois si dirigé vous sur l’onglet PHP. Définissez votre PHP langage level a 8.0 et activez votre CLI interpréter. 
+Go again to &quot;File/Settings&quot; but this time if you are on the PHP tab. Set your PHP language level to 8.0 and activate your CLI interpreter.
 
-S’il vous manque l’interpréteur téléchargez le [ici](https://www.php.net/downloads) et installez le a l’aide de la [documentation](https://moodle.cpnv.ch/moodle/pluginfile.php/78925/mod_resource/content/7/SetupPhpStorm%20V1.1.pdf) prévue à cet effet.
+If you are missing the interpreter download it here and install it with the help of the documentation provided.
 
-**Mise en place du Xdebug :**
+**Setting up of Xdebug :**
 
-Pour avoir simplement le xdebug dirigez-vous dans « Run/ Run » puis sélectionnez « formulaire.php »
+To simply have the xdebug go to &quot; Run/ Run &quot; then select &quot; formulaire.php &quot;.
 
 ## Git
 
-**Installation :**
+**Installation :**
 
-Si git n’est pas installer sur votre machine vous pouvez le télécharger [ici](https://git-scm.com/downloads), sélectionner votre system d’exploitation et prenez la dernière version 64 bit.
+If git is not installed on your machine you can download it [here](https://git-scm.com/), select your operating system and take the latest 64 bit version.
 
-Contentez-vous simplement de cliquer sur suivant tout le long de l’installation.
+Just click on Next throughout the installation.
 
-Lors de vos premières commandes, git vous demandera une identification, contentez-vous d’exécuter à la lettre ce qu’il vous demande et identifié vous avec votre navigateur.
+At the time of your first commands, git will ask you for an identification, just execute to the letter what it asks you and identify yourself with your browser.
 
-**Mise a jours :**
+**Update :**
 
-* Sur Windows: *git update-git-for-windows*
+* On Windows: _git update-git-for-windows
 
-* Sur Linux: *sudo apt-get update* puis *sudo apt-get install git*
+* On Linux: _sudo apt-get update_ puis _sudo apt-get install git
 
-* Sur Mac: *brew update* puis *brew upgrade git*
+* On Mac: _brew update_ puis _brew upgrade git
 
+## Doxygen
 
+**Installation :**
 
-## Doxygen	
+Go to this link, scroll down until you find the &quot;Source and Binaries&quot; section. Download the installer for the OS of your choice..
 
-**Installation :**
+Just click on Next throughout the installation.
 
-Rendez-vous sur [ce](https://www.doxygen.nl/download.html) lien, scrollez vers le bas jusqu’à trouver la rubrique « Source and Binaries ». Téléchargez l’installateur correspondant à l’OS de votre choix. 
+Slack
 
-Contentez-vous simplement de cliquer sur suivant tout le long de l’installation.
+**Installation :**
 
-## Slack
+Just download the application available [here](https://slack.com/intl/fr-ch/). If you have a linux or mac, just add a "/linux or /mac to the url.
 
-**Installation :**
+You will still need to create an account.
 
-Contentez-vous simplement de télécharger l’application disponible [ici](https://slack.com/intl/fr-ch/). Si vous avez un linux ou un mac, ajouter juste un « /linux ou un /mac a l’url.
+## Client SSH
 
-Vous allez néanmoins devoir créer un compte.
+**Installation Windows :**
 
-## Client SSH	
+First of all, press the Windows key + R, in the window copy-paste this command: ms-settings:optionalfeatures. A window will then open, you will have to look for SSH and install it.
 
-**Installation Windows :**
+To start the service, you have to go to the service application and look for OpenSSH SSH Server, then set the service to manual start (or automatic).
 
-Tout d’abord, pressez la touche Windows + R, dans la fenêtre copier- coller cette commande : ms-settings:optionalfeatures. Une fenêtre s’ouvre ensuite, il va falloir y chercher SSH et l’installer.
+3
 
-Pour lancer le service, il va falloire aller dans l’application service et y chercher OpenSSH SSH Server, puis mettre le service en démarrage manuel (Où automatique).
-
-
-
-Adam Sifate 03.06.22  basé sur le document Doc_Configuration_IDE
+Pierrot Métille 10.06.2022
