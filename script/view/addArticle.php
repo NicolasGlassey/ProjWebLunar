@@ -4,7 +4,11 @@
  * @brief   The user enter the information for add a article
  * @author  Create by Elodie modified by Adam, Nathan, Pierrot
  * @version 09.06.2022
- */ ?>
+ */
+
+$title = "Ajout d'article";
+ob_start()
+?>
 
 <!DOCTYPE html>
 <html>
