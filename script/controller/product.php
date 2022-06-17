@@ -10,6 +10,7 @@
 function addArticle($arrayofArticle){
     require "model/articleManager.php";
     if($arrayofArticle ==! null){
+        //get the datas from the form
         $title = $arrayofArticle['title'];
         $category = $arrayofArticle['category'];
         $description = $arrayofArticle['description'];
@@ -22,13 +23,19 @@ function addArticle($arrayofArticle){
                 //send back to the add article page
                 require "view/addArticle.php";
             }else{
-                //write the article in the DB
+                //get the id of the chosen category
                 $idcategory=getCategoryId($category);
                 if($idcategory != "erreur"){
-                    //TODO faire fonction get id client
-                    getClientId();
-                    writeArticleInDB($title,$description,$image,$price,$_SESSION['user'],$idcategory);
-                    require 'view/home.php';
+                    //get the id of the seller
+                    $idClient=getClientId($_SESSION['user']);
+                    if($idClient != "erreur"){
+                        //write the article in the DB
+                        writeArticleInDB($title,$description,$image,$price,$idClient,$idcategory);
+                        require 'view/home.php';
+                    }else{
+                        //send back to the add article page
+                        require "view/addArticle.php";
+                    }
                 }else{
                     require "view/addArticle.php";
                 }

@@ -15,7 +15,6 @@
 <head>
     <title>
         <?php
-        //TODO ajouter le "Ajouter un produit" dans le if $_SESSION['user']
         echo $title;
         if(isset ($_SESSION['user']) ){
             $connect="Se déconnecter";
@@ -89,12 +88,12 @@
                     <li class="u-nav-item"><a
                                 class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
                                 href="index.php?action=register" style="padding: 10px 20px;"> S'inscrire</a></li>
-
-                    <li class="u-nav-item"><a
-                                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                                href="index.php?action=addArticle" style="padding: 10px 20px;"> Ajouter un produit</a>
-                    </li>
-
+                    <?php if (isset ($_SESSION['user'])) : ?>
+                        <li class="u-nav-item"><a
+                                    class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                                    href="index.php?action=addArticle" style="padding: 10px 20px;"> Ajouter un produit</a>
+                        </li>
+                    <?php endif?>
                     <li class="u-nav-item"><a
                                 class="u-button-style u-nav-link u-text-active-palette-1-base u-text-active-palette-1-base "
                                 href="<?php echo $connectLink; ?>"

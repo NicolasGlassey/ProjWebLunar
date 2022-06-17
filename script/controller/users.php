@@ -11,6 +11,7 @@
  * @return void
  */
 function sessionUnlogin(){
+    //unlog the user
     require 'view/home.php';
     session_destroy();
 }
@@ -21,8 +22,8 @@ function sessionUnlogin(){
  */
 function register($arrayOfUser){
     require "model/userManager.php";
-    //prepare to send a request to write the user in the DB
     if($arrayOfUser ==! null){
+        //get the datas from the form
         $email = $arrayOfUser['email'];
         $pseudo = $arrayOfUser['pseudo'];
         $password = $arrayOfUser['password'];
@@ -46,17 +47,16 @@ function register($arrayOfUser){
 function login($arrayOfUser){
     require "model/userManager.php";
     if($arrayOfUser==!null){
-        //decode the file to a string
+        //get the datas from the form
         $email = $arrayOfUser['email'];
         $pseudo = $arrayOfUser['pseudo'];
         $password = $arrayOfUser['password'];
         $jsonContent=getContentJson();
-        //check if the pseudo and the password are inside of the JSON file
+        //check if the pseudo and the password are inside of the DB
         if(checkAccount($pseudo,$email,$password)){
             //Connection to the user account
             $_SESSION['user']=$pseudo;
             $_SESSION['email']=$email;
-
             require 'view/home.php';
         }
         else{
@@ -66,5 +66,4 @@ function login($arrayOfUser){
     }else{
         require "view/login.php";
     }
-
 }
