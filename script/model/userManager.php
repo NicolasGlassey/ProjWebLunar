@@ -16,7 +16,7 @@ function writeRegisterInDatabase($email,$name,$password)
     //write in the DB the new account
     require_once "model/dbConnector.php";
     //prepare the query and then execute it with dbconnector.php
-    $loginQuery = 'INSERT INTO members (name,email,pasword,types_idTypes) VALUES ("'.$name.'","'.$email.'","'.$password.'","'."1".'")';
+    $loginQuery = 'INSERT INTO members (name,email,password,types_idTypes) VALUES ("'.$name.'","'.$email.'","'.$password.'","'."1".'")';
     //TODO corriger pasword en password :P
     $queryResult = executeQuerySelect($loginQuery);
 
@@ -47,7 +47,7 @@ function checkAccount($name,$email,$password)
 
     $result = false;
     $strSeparator = '\'';
-    $loginQuery = 'SELECT * FROM members WHERE email ='.$strSeparator.$email.$strSeparator.'AND name='.$strSeparator.$name.$strSeparator.'AND pasword='.$password;
+    $loginQuery = 'SELECT * FROM members WHERE email ='.$strSeparator.$email.$strSeparator.'AND name='.$strSeparator.$name.$strSeparator.'AND password='.$password;
     //TODO corriger pasword en password :P
     $queryResult = executeQuerySelect($loginQuery);
     //check if there's ONE thing in the result. If not, send a error instead

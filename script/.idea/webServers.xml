@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="94a4cc8c-9b2c-4ba2-b31f-4383500f46d5" name="Inplace" url="http://localhost:8089">
+      <webServer id="94a4cc8c-9b2c-4ba2-b31f-4383500f46d5" name="Inplace" url="http://localhost:8088">
         <fileTransfer accessType="LOCAL" port="0" />
       </webServer>
     </option>

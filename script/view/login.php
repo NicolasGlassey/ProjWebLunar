@@ -9,6 +9,7 @@
 */
 $title = "register";
 ob_start()
+//TODO corriger problème d'image sur login.php, register.php et home.php
 ?>
 <!DOCTYPE html>
 <html style="font-size: 16px;">

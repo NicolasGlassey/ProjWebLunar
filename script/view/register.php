@@ -58,7 +58,7 @@ ob_start();
 
                             <!--Submit button-->
                             <div >
-                                <button type="submit" class="btn form-control btn-primary rounded submit px-3">Se connecter</button>
+                                <button type="submit" class="btn form-control btn-primary rounded submit px-3">S'inscrire</button>
                             </div>
                         </form>
                     </div>
