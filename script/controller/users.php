@@ -51,7 +51,6 @@ function login($arrayOfUser){
         $email = $arrayOfUser['email'];
         $pseudo = $arrayOfUser['pseudo'];
         $password = $arrayOfUser['password'];
-        $jsonContent=getContentJson();
         //check if the pseudo and the password are inside of the DB
         if(checkAccount($pseudo,$email,$password)){
             //Connection to the user account

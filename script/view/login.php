@@ -7,6 +7,7 @@
 * @author  Create by Elodie modified by Adam, Nathan, Pierrot
 * @version 10.06.2022
 */
+$title = "register";
 ob_start()
 ?>
 <!DOCTYPE html>

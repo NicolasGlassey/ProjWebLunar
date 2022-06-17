@@ -56,4 +56,3 @@ function checkAccount($name,$email,$password)
     }
     return $result;
 }
-//TODO Delete all JSON files/function (at the end once every is done!!!), also change the title of this file
