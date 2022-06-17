@@ -85,15 +85,19 @@
             <!--allow to make more link on the top-->
             <div class="u-nav-container">
                 <ul class="u-nav u-unstyled u-nav-1">
-                    <li class="u-nav-item"><a
-                                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                                href="index.php?action=register" style="padding: 10px 20px;"> S'inscrire</a></li>
-                    <?php if (isset ($_SESSION['user'])) : ?>
+                                        <?php if (isset ($_SESSION['user'])) : ?>
                         <li class="u-nav-item"><a
                                     class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
                                     href="index.php?action=addArticle" style="padding: 10px 20px;"> Ajouter un produit</a>
                         </li>
-                    <?php endif?>
+
+                    <?php else :?>
+
+                                            <li class="u-nav-item"><a
+                                                        class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                                                        href="index.php?action=register" style="padding: 10px 20px;"> S'inscrire</a></li>
+
+                                        <?php endif?>
                     <li class="u-nav-item"><a
                                 class="u-button-style u-nav-link u-text-active-palette-1-base u-text-active-palette-1-base "
                                 href="<?php echo $connectLink; ?>"

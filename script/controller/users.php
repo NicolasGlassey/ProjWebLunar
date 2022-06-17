@@ -27,15 +27,20 @@ function register($arrayOfUser){
         $email = $arrayOfUser['email'];
         $pseudo = $arrayOfUser['pseudo'];
         $password = $arrayOfUser['password'];
-        //check if the email is already in the DB, if not, it will write in the DB
-        if(checkIfEmailExist($email)) {
+        //check if it is a email
+        if(str_contains($email,'@')){
+            //check if the email is already in the DB, if not, it will write in the DB
+            if(checkIfEmailExist($email)) {
+                require "view/register.php";
+            }
+            else{
+                writeRegisterInDatabase($email,$pseudo,$password);
+            }
+            $_SESSION['user']=$pseudo;
+            require 'view/home.php';
+        }else{
             require "view/register.php";
         }
-        else{
-            writeRegisterInDatabase($email,$pseudo,$password);
-        }
-        $_SESSION['user']=$pseudo;
-        require 'view/home.php';
     }else{
         require "view/register.php";
     }
