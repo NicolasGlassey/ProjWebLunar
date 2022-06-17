@@ -53,6 +53,8 @@ function checkAccount($name,$email,$password)
     //check if there's ONE thing in the result. If not, send a error instead
     if (count($queryResult) == 1) {
         $result = true;
+    }else{
+        $result = false;
     }
     return $result;
 }
