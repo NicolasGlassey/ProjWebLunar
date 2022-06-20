@@ -32,7 +32,7 @@ function openDBConnection()
     $hostname = 'localhost';
     $port = 3306;
     $charset = 'utf8';
-    $dbName = 'ProjWebLunar';
+    $dbName = 'projweblunar';
     $username = 'admin'; //TODO a modifier avec celui du serveur (admin)
     $userPsw = 'Pa$$w0rd'; //TODO a modifier avec celui du serveur (Pa$$w0rd)
     $dsn = $sqlDriver . ':host=' . $hostname . ';dbname=' . $dbName . ';port=' . $port . ';charset=' . $charset;
