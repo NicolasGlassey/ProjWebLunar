@@ -10,6 +10,14 @@
 CREATE DATABASE IF NOT EXISTS `ProjWebLunar`;
 USE `ProjWebLunar`;
 
+-- Table Categories
+	CREATE TABLE IF NOT EXISTS `ProjWebLunar`.`categories` (
+  `idCategories` int NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(15) NOT NULL,
+  
+  PRIMARY KEY (`idCategories`),
+  UNIQUE KEY (`name`) 
+)ENGINE= INNODB;
 
 -- Table Membres
 CREATE TABLE IF NOT EXISTS `ProjWebLunar`.`members` (
@@ -57,11 +65,4 @@ CREATE TABLE IF NOT EXISTS `ProjWebLunar`.`articles` (
 		ON UPDATE NO ACTION
 	) ENGINE= INNODB;
 	
--- Table Categories
-	CREATE TABLE IF NOT EXISTS `ProjWebLunar`.`categories` (
-  `idCategories` int NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(15) NOT NULL,
-  
-  PRIMARY KEY (`idCategories`),
-  UNIQUE KEY (`name`) 
-)ENGINE= INNODB;
+
