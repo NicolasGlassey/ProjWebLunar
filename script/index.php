@@ -5,7 +5,8 @@
  * @author  Create by Nathan modified by Adam, Elodie, Pierrot
  * @version 09.06.2022
  */
-y
+
+require 'controller/users.php';
 require "controller/navigation.php";
 require "controller/product.php";
 
@@ -34,7 +35,7 @@ if (isset($_GET['action'])){
             home(false);
             break;
 
-            //sent the user to the lost page
+        //sent the user to the lost page
         default:
             home(true);
     }
