@@ -48,7 +48,7 @@ ob_start();
                             <span class="inputLabel">Email:</span>
                             <div class="form-group">
                                 <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
-                                <input  type="text" name="email" class="form-control"  required="">
+                                <input  type="email" name="email" class="form-control"  required="">
                             </div>
                             <span class="inputLabel">Mot de passe :</span>
                             <div class="form-group">
