@@ -5,8 +5,7 @@
  * @author  Create by Nathan modified by Adam, Elodie, Pierrot
  * @version 09.06.2022
  */
-
-require 'controller/users.php';
+y
 require "controller/navigation.php";
 require "controller/product.php";
 
