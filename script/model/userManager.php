@@ -47,7 +47,7 @@ function checkAccount($name,$email,$password)
 
     $result = false;
     $strSeparator = '\'';
-    $loginQuery = 'SELECT * FROM members WHERE email ='.$strSeparator.$email.$strSeparator.'AND name='.$strSeparator.$name.$strSeparator.'AND password='.$password;
+    $loginQuery = 'SELECT email, name, password FROM members WHERE email ='.$strSeparator.$email.$strSeparator.'AND name='.$strSeparator.$name.$strSeparator.'AND password='.$strSeparator.$password.$strSeparator;
     //TODO corriger pasword en password :P
     $queryResult = executeQuerySelect($loginQuery);
     //check if there's ONE thing in the result. If not, send a error instead
