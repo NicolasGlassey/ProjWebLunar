@@ -7,13 +7,12 @@
  */
 
 /**
- * @brief Unlogin the user
+ * @brief Logout the user
  * @return void
  */
-function sessionUnlogin(){
-    //unlog the user
-    require 'view/home.php';
+function logout(){
     session_destroy();
+    require 'view/home.php';
 }
 
 /**
@@ -29,7 +28,6 @@ function register($arrayOfUser){
         $password = $arrayOfUser['password'];
         //check if it is a email
         if(str_contains($email,'@')){
-            //check if the email is already in the DB, if not, it will write in the DB
             if(checkIfEmailExist($email)) {
                 require "view/register.php";
             }
@@ -38,36 +36,26 @@ function register($arrayOfUser){
             }
             $_SESSION['user']=$pseudo;
             require 'view/home.php';
-        }else{
-            require "view/register.php";
         }
-    }else{
         require "view/register.php";
     }
 }
+
 /**
- * @param $arrayOfUser
+ * @param $inputEmail
+ * @param $inputPseudo
+ * @param $inputPassword
  * @return void
  */
-function login($arrayOfUser){
+function login($inputEmail, $inputPseudo, $inputPassword){
     require "model/userManager.php";
-    if($arrayOfUser==!null){
-        //get the datas from the form
-        $email = $arrayOfUser['email'];
-        $pseudo = $arrayOfUser['pseudo'];
-        $password = $arrayOfUser['password'];
-        //check if the pseudo and the password are inside of the DB
-        if(checkAccount($pseudo,$email,$password)){
-            //Connection to the user account
-            $_SESSION['user']=$pseudo;
-            $_SESSION['email']=$email;
-            require 'view/home.php';
-        }
-        else{
-            //send back to the login page
-            require_once 'view/login.php';
-        }
-    }else{
-        require "view/login.php";
+    if(checkAccount($inputPseudo,$inputEmail,$inputPassword)){
+        //Connection to the user account
+        $_SESSION['user']=$inputPseudo;
+        $_SESSION['email']=$inputEmail;
+        require 'view/home.php';
+    }
+    else {
+        require_once 'view/login.php';
     }
 }
