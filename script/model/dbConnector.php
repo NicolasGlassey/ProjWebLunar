@@ -8,7 +8,7 @@
 
 /**
  * @param $query
- * @return null
+ * @return array|false|null
  */
 function executeQuerySelect($query)
 {
@@ -16,15 +16,18 @@ function executeQuerySelect($query)
 
     $dbConnection = openDBConnection();
     if ($dbConnection != null) {
-        $statement = $dbConnection->prepare($query); //Query prepare
-        $statement->execute(); //Execute query
-        $queryResult = $statement->fetchAll(); //prepart result for client
+        $statement = $dbConnection->prepare($query);
+        $statement->execute();
+        $queryResult = $statement->fetchAll();
     }
-    $dbConnection = null; //Close connection
+    $dbConnection = null;
     return $queryResult;
 }
 
-function openDBConnection()
+/**
+ * @return PDO|null
+ */
+function openDBConnection(): ?PDO
 {
     $tempDTConnection = null;
 
@@ -39,14 +42,8 @@ function openDBConnection()
 
     try {
         $tempDTConnection = new PDO($dsn, $username, $userPsw);
-    } catch (PDOEception $eception) {
-        echo 'Connection faild' . $eception->getMessage();
+    } catch (PDOEception $exception) {
+        echo 'Connection failed' . $exception->getMessage();
     }
     return $tempDTConnection;
-}
-
-//class for exeptions' management
-class ModelDataExeption
-{
-
 }

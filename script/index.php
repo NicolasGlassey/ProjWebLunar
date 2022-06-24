@@ -19,22 +19,19 @@ if (isset($_GET['action'])){
         case 'addArticle':
             addArticle($_POST);
             break;
-
-        case 'logOut':
-            sessionUnlogin();
+        case 'logout':
+            logout();
             break;
-
         case 'register':
             register($_POST);
             break;
         //sent the user to the login page
         case 'login':
-            login($_POST);
+            login($_POST['email'], $_POST['pseudo'], $_POST['password']);
             break;
         case 'home':
             home(false);
             break;
-
         //sent the user to the lost page
         default:
             home(true);

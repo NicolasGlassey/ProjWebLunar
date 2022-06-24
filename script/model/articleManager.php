@@ -1,27 +1,37 @@
 <?php
 /**
  * @file    articleManager.php
- * @brief   article management bewteen the server and the DB (mostly to add or check datas)
+ * @brief   article management between the server and the DB (mostly to add or check data)
  * @author  Create by Nathan modified by Adam, Elodie, Pierrot
  * @version 10.06.2022
  */
 
+/**
+ * @param $title
+ * @param $description
+ * @param $image
+ * @param $price
+ * @param $pseudo
+ * @param $category
+ * @return null
+ */
 function writeArticleInDB($title,$description,$image,$price,$pseudo,$category)
 {
-    //write the received datas in the DB
     require_once "model/dbConnector.php";
-    //prepare the query and then execute it with dbconnector.php
-    $strSeparator = '\'';
     $loginQuery = 'INSERT INTO articles (title,description,price,image,categories_ID,clients_ID) VALUES ("'.$title.'","'.$description.'","'.$price.'","'.$image.'","'.$category.'","'.$pseudo.'")';
-    $queryResult = executeQuerySelect($loginQuery);
-    return $queryResult;
+    return executeQuerySelect($loginQuery);
 }
 
-function checkIfProductExist($title,$description)
+/**
+ * @param $title
+ * @param $description
+ * @return bool
+ */
+function checkIfProductExist($title,$description): bool
 {
     //check if a product has the same title and descrition than the one gotten with the form
     require_once "model/dbConnector.php";
-    //prepare the query and then execute it with dbconnector.php
+
     $result = false;
     $strSeparator = '\'';
     $loginQuery = 'SELECT * FROM articles WHERE title ='.$strSeparator.$title.$strSeparator.'AND description='.$strSeparator.$description.$strSeparator;
@@ -32,7 +42,11 @@ function checkIfProductExist($title,$description)
     return $result;
 }
 
-function getCategoryId($category)
+/**
+ * @param $category
+ * @return string
+ */
+function getCategoryId($category): string
 {
     //get the id of the category
     require_once "model/dbConnector.php";
@@ -49,11 +63,13 @@ function getCategoryId($category)
     return $result;
 }
 
-function getClientId($pseudo)
+/**
+ * @param $pseudo
+ * @return string
+ */
+function getClientId($pseudo): string
 {
-    //get the id of the seller/current user
     require_once "model/dbConnector.php";
-    //prepare the query and then execute it with dbconnector.php
     $strSeparator = '\'';
     $loginQuery = 'SELECT idUsers FROM members WHERE name ='.$strSeparator.$pseudo.$strSeparator;
     $queryResult = executeQuerySelect($loginQuery);
